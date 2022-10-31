@@ -1,12 +1,8 @@
 ---
-title: "Baoyi's website"
+title: "RESUME"
 output: 
   html_document:
     toc: true
     toc_float: true
     theme: cerulean
 ---
-
-# Introductory
-
-<img src="img/me.jpg" style="width:100%">
