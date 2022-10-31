@@ -1,0 +1,19 @@
+---
+title: "Baoyi's website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This is Baoyi's website
+
+## Introductory
+
+<img src="img/me.jpg" style="width:100%">
+
+
+## Link
+I have included my resume below for you.
+*[Resume]()
