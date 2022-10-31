@@ -1,5 +1,5 @@
 ---
-title: "Baoyi's website"
+title: "My First Website"
 output: 
   html_document:
     toc: true
@@ -7,13 +7,10 @@ output:
     theme: cerulean
 ---
 
-# This is Baoyi's website
+# This is Baoyi's pages
 
 ## Introductory
 
-<img src="img/me.jpg" style="width:100%">
+<img src="img/me.jpg" style="width:50%">
 
-
-## Link
-I have included my resume below for you.
-*[Resume]()
+Hi, everyone! This is Baoyi's page. I am a current biostat student at Columbia University and graduated from Zhejiang University with a bachelor's degree in Veterinary Medicine. Now I am learning P8105 and making my website!
