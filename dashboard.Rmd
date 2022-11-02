@@ -25,20 +25,19 @@ instacart =
 Column {data-width=400}
 -----------------------------------------------------------------------
 
-### Number of every kind of product ordered in milk aisle (at least 500 orderd)
+### Number of each kind of products ordered in fresh fruits aisle over a day
 
-```{r}
-
+```{r }
 instacart %>% 
-  filter(aisle == "milk") %>%
-  group_by(aisle, product_name) %>%
-  summarize(n = n()) %>% 
-  filter(n >= 500) %>%
-  mutate(product_name = fct_reorder(product_name, n)) %>% 
-  mutate(text_label = str_c("Aisle: ", aisle)) %>% 
-  plot_ly(x = ~product_name, y = ~n, color = ~product_name, text = ~text_label, type = "bar", colors = "viridis")
-
+  filter(aisle == "fresh fruits") %>%
+  group_by(order_hour_of_day, product_name) %>%
+  summarize(n = n()) %>%
+  mutate(text_label = str_c("Product name: ", product_name)) %>% 
+  plot_ly(
+    x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "markers",
+    color = ~product_name, text = ~text_label, alpha = 0.6)
 ```
+
 
 Column {data-width=300}
 -----------------------------------------------------------------------
@@ -55,16 +54,18 @@ instacart %>%
 
 ```
 
-### Number of each kind of products ordered in fresh fruits aisle over a day
 
-```{r }
+### Number of every kind of product ordered in milk aisle (at least 500 orderd)
+
+```{r}
+
 instacart %>% 
-  filter(aisle == "fresh fruits") %>%
-  group_by(order_hour_of_day, product_name) %>%
-  summarize(n = n()) %>%
-  mutate(text_label = str_c("Product name: ", product_name)) %>% 
-  plot_ly(
-    x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "markers",
-    color = ~product_name, text = ~text_label, alpha = 0.6)
-```
+  filter(aisle == "milk") %>%
+  group_by(aisle, product_name) %>%
+  summarize(n = n()) %>% 
+  filter(n >= 500) %>%
+  mutate(product_name = fct_reorder(product_name, n)) %>% 
+  mutate(text_label = str_c("Aisle: ", aisle)) %>% 
+  plot_ly(x = ~product_name, y = ~n, color = ~product_name, text = ~text_label, type = "bar", colors = "viridis")
 
+```
