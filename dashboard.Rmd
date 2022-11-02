@@ -35,7 +35,7 @@ instacart %>%
   mutate(text_label = str_c("Product name: ", product_name)) %>% 
   plot_ly(
     x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "markers",
-    color = ~product_name, text = ~text_label, alpha = 0.6)
+    color = ~product_name, text = ~text_label, alpha = 0.6, width = 6)
 ```
 
 
