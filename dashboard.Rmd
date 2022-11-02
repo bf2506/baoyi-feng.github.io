@@ -8,6 +8,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 library(flexdashboard)
 library(tidyverse)
 library(patchwork)
@@ -25,7 +26,8 @@ Column {data-width=650}
 
 ### Number of every kind of product ordered in milk aisle (at least 500 orderd)
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
 instacart %>% 
   filter(aisle == "milk") %>%
   group_by(aisle, product_name) %>%
@@ -34,14 +36,21 @@ instacart %>%
   mutate(product_name = fct_reorder(product_name, n)) %>% 
   mutate(text_label = str_c("Aisle: ", aisle)) %>% 
   plot_ly(x = ~product_name, y = ~n, color = ~product_name, text = ~text_label, type = "bar", colors = "viridis")
+
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Days since prior order of each aisle in snacks department
 
-```{r}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+instacart %>% 
+  filter(reordered == 1) %>%
+  filter(department == "snacks") %>%
+  mutate(aisle = fct_reorder(aisle, days_since_prior_order)) %>%
+  plot_ly(y = ~days_since_prior_order, color = ~aisle, type = "box", colors = "viridis")
 
 ```
 
