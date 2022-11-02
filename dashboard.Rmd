@@ -1,0 +1,53 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(patchwork)
+library(plotly)
+library(p8105.datasets)
+
+data("instacart")
+instacart = 
+  instacart %>% 
+  as_tibble(instacart)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Number of every kind of product ordered in milk aisle (at least 500 orderd)
+
+```{r echo=FALSE}
+instacart %>% 
+  filter(aisle == "milk") %>%
+  group_by(aisle, product_name) %>%
+  summarize(n = n()) %>% 
+  filter(n >= 500) %>%
+  mutate(product_name = fct_reorder(product_name, n)) %>% 
+  mutate(text_label = str_c("Aisle: ", aisle)) %>% 
+  plot_ly(x = ~product_name, y = ~n, color = ~product_name, text = ~text_label, type = "bar", colors = "viridis")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
