@@ -22,7 +22,7 @@ instacart =
   as_tibble(instacart)
 ```
 
-Column {data-width=600}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Number of every kind of product ordered in milk aisle (at least 500 orderd)
@@ -40,7 +40,7 @@ instacart %>%
 
 ```
 
-Column {data-width=200}
+Column {data-width=300}
 -----------------------------------------------------------------------
 
 ### Days since prior order of each aisle in snacks department
