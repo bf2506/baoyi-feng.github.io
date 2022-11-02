@@ -8,11 +8,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
 library(flexdashboard)
+
 library(tidyverse)
-library(patchwork)
 library(plotly)
+
 library(p8105.datasets)
 
 data("instacart")
@@ -21,12 +22,12 @@ instacart =
   as_tibble(instacart)
 ```
 
-Column {data-width=650}
+Column {data-width=600}
 -----------------------------------------------------------------------
 
 ### Number of every kind of product ordered in milk aisle (at least 500 orderd)
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
 
 instacart %>% 
   filter(aisle == "milk") %>%
@@ -39,12 +40,12 @@ instacart %>%
 
 ```
 
-Column {data-width=350}
+Column {data-width=200}
 -----------------------------------------------------------------------
 
 ### Days since prior order of each aisle in snacks department
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r }
 
 instacart %>% 
   filter(reordered == 1) %>%
@@ -56,7 +57,7 @@ instacart %>%
 
 ### Number of each kind of products ordered in fresh fruits aisle over a day
 
-```{r}
+```{r }
 instacart %>% 
   filter(aisle == "fresh fruits") %>%
   group_by(order_hour_of_day, product_name) %>%
