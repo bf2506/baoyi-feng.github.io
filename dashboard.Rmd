@@ -37,7 +37,9 @@ instacart %>%
   plot_ly(
     x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "markers",
     color = ~product_name, text = ~text_label, alpha = 0.6) %>% 
-  layout(showlegend = FALSE)
+  layout(legend = list(x = -0.1, y = -1.7))
+
+
 ```
 
 
