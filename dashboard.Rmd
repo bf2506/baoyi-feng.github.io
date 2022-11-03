@@ -23,7 +23,7 @@ instacart =
   as_tibble(instacart)
 ```
 
-Column {data-width=400}
+Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Number of each kind of products ordered in fresh fruits aisle over a day
@@ -42,7 +42,7 @@ instacart %>%
 ```
 
 
-Column {data-width=300}
+Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Days since prior order of each aisle in snacks department
