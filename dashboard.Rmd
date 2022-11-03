@@ -37,8 +37,9 @@ instacart %>%
   plot_ly(
     x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "markers",
     color = ~product_name, text = ~text_label, alpha = 0.6, height = 700) %>% 
-  layout(legend = list(x = -0.1, y = -2))
-
+  layout(legend = list(x = -0.1, y = -2)) %>% 
+  layout(xaxis = list(title = 'Order Hour Of A Day'),
+         yaxis = list(title = 'Number'))
 ```
 
 
@@ -53,7 +54,8 @@ instacart %>%
   filter(reordered == 1) %>%
   filter(department == "snacks") %>%
   mutate(aisle = fct_reorder(aisle, days_since_prior_order)) %>%
-  plot_ly(y = ~days_since_prior_order, color = ~aisle, type = "box", colors = "viridis")
+  plot_ly(y = ~days_since_prior_order, color = ~aisle, type = "box", colors = "viridis") %>% 
+  layout(yaxis = list(title = "Days Since Prior Order"))
 
 ```
 
@@ -61,7 +63,6 @@ instacart %>%
 ### Number of every kind of product ordered in milk aisle (at least 500 orderd)
 
 ```{r}
-
 instacart %>% 
   filter(aisle == "milk") %>%
   group_by(aisle, product_name) %>%
@@ -70,6 +71,7 @@ instacart %>%
   mutate(product_name = fct_reorder(product_name, n)) %>% 
   mutate(text_label = str_c("Aisle: ", aisle)) %>% 
   plot_ly(x = ~product_name, y = ~n, color = ~product_name, text = ~text_label, type = "bar", colors = "viridis") %>% 
-  layout(showlegend = FALSE)
+  layout(showlegend = FALSE) %>% 
+  layout(xaxis = list(title = "Product"), yaxis = list(title = "Number"))
 
 ```
