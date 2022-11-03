@@ -72,6 +72,6 @@ instacart %>%
   mutate(text_label = str_c("Aisle: ", aisle)) %>% 
   plot_ly(x = ~product_name, y = ~n, color = ~product_name, text = ~text_label, type = "bar", colors = "viridis") %>% 
   layout(showlegend = FALSE) %>% 
-  layout(xaxis = list(title = "Product", standoff = 5), yaxis = list(title = "Number"))
+  layout(xaxis = list(title = list(text = "Product", standoff = 5)), yaxis = list(title = "Number"))
 
 ```
