@@ -28,7 +28,7 @@ Column {data-width=400}
 
 ### Number of each kind of products ordered in fresh fruits aisle over a day
 
-```{r }
+```{r}
 instacart %>% 
   filter(aisle == "fresh fruits") %>%
   group_by(order_hour_of_day, product_name) %>%
@@ -36,9 +36,8 @@ instacart %>%
   mutate(text_label = str_c("Product name: ", product_name)) %>% 
   plot_ly(
     x = ~order_hour_of_day, y = ~n, type = "scatter", mode = "markers",
-    color = ~product_name, text = ~text_label, alpha = 0.6) %>% 
+    color = ~product_name, text = ~text_label, alpha = 0.6, height = 500) %>% 
   layout(legend = list(x = -0.1, y = -1.7))
-
 
 ```
 
