@@ -26,7 +26,7 @@ instacart =
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Number of each kind of products ordered in fresh fruits aisle over a day
+### Number Of Each Kind Of Products Ordered In Fresh Fruits Aisle Over A Day
 
 ```{r}
 instacart %>% 
@@ -46,7 +46,7 @@ instacart %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Days since prior order of each aisle in snacks department
+### Days Since Prior Order Of Each Aisle In Snacks Department
 
 ```{r }
 
@@ -60,7 +60,7 @@ instacart %>%
 ```
 
 
-### Number of every kind of product ordered in milk aisle (at least 500 orderd)
+### Number Of Every Kind Of Product Ordered In Milk Aisle (At Least 500 Orderd)
 
 ```{r}
 instacart %>% 
