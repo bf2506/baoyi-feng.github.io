@@ -11,6 +11,8 @@ navbar:
       href: https://github.com/bf2506
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/fengbaoyi/
+    - text: "Dashboard"
+      href: dashboard.html
 output:
   html_document:
     theme: cerulean

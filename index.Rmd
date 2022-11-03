@@ -14,3 +14,7 @@ output:
 <img src="img/me.jpg" style="width:50%">
 
 Hi, everyone! This is Baoyi's page. I am a current biostat student at Columbia University and graduated from Zhejiang University with a bachelor's degree in Veterinary Medicine. Now I am learning P8105 and making my website!
+
+## Related Link
+**·** [Resume](resume.html) <br>
+**·** [Dashboard](dashboard.html)
